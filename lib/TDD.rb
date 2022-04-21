@@ -1,3 +1,5 @@
+require 'byebug'
+
 class Array
     def my_uniq
         new_arr=[]
@@ -39,29 +41,32 @@ class Array
         arr
     end
 
- 
+    
+    def stock_picker
+        arr = []
+        profit = 0
+
+        self.each_with_index do |ele1,idx1|
+
+
+            self.each_with_index do |ele2,idx2|
+                if idx2 > idx1 
+
+                    # debugger
+                    if (ele2 - ele1) > profit
+                        profit = (ele2 - ele1)
+                        arr = []
+                        arr = [idx1,idx2]
+                    end
+
+                end
+
+            end
+
+        end
+
+        arr
+    end
 
 end
 
-
-
-
-#         i = 0
-       
-#        arr = []
-#      subArr = []
-
-#      self.each_with_index do |arr,idx1|
-#         subArr << arr[i]
-#         i += 1
-#         arr << subArr
-#      end
-#     arr
-# end
-
-
-
-# p [
-#     [0,1,2],[
-#     3,4,5],[6,7,8]
-# ].my_transpose

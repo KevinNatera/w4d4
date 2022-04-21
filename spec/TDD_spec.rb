@@ -26,6 +26,14 @@ require 'TDD'
         end
     end
 
+    describe "#stock_picker" do
+        context "if done correctly" do
+            it "finds the most profitable days to buy and sell" do
+                expect([1,0,2,4,1].stock_picker).to eq ([1,3])
+            end
+        end
+    end
+
     end
 
     
